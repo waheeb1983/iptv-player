@@ -191,6 +191,47 @@ function playUrl(url) {
     }
 }
 
+// Export channels data
+function exportChannels() {
+    const data = {
+        savedUrls: savedUrls,
+        timestamp: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `iptv-channels-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+// Import channels data
+function importChannels(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                if (data.savedUrls && Array.isArray(data.savedUrls)) {
+                    savedUrls = data.savedUrls;
+                    localStorage.setItem('savedUrls', JSON.stringify(savedUrls));
+                    updateUrlList();
+                    alert('Channels imported successfully!');
+                } else {
+                    alert('Invalid file format');
+                }
+            } catch (error) {
+                alert('Error importing channels: ' + error.message);
+            }
+        };
+        reader.readAsText(file);
+    }
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     initPlayer();
