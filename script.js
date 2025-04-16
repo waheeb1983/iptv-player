@@ -232,8 +232,28 @@ function importChannels(event) {
     }
 }
 
+// Load default channels
+function loadDefaultChannels() {
+    // Only load default channels if no channels exist
+    if (savedUrls.length === 0) {
+        fetch('channels.json')
+            .then(response => response.json())
+            .then(data => {
+                if (data.savedUrls && Array.isArray(data.savedUrls)) {
+                    savedUrls = data.savedUrls;
+                    localStorage.setItem('savedUrls', JSON.stringify(savedUrls));
+                    updateUrlList();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading default channels:', error);
+            });
+    }
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     initPlayer();
+    loadDefaultChannels();
     updateUrlList();
 }); 

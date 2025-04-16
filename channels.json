@@ -1,0 +1,1153 @@
+{
+  "savedUrls": [
+    {
+      "id": "1744751785467",
+      "name": "AlMamlakaTV",
+      "url": "https://bcovlive-a.akamaihd.net/4109c7ba30fd4a44ad9afe917c67a8c8/eu-central-1/6415809151001/playlist.m3u8",
+      "isFavorite": true
+    },
+    {
+      "name": "Al Mamlaka TV (1080p)",
+      "url": "https://bcovlive-a.akamaihd.net/4109c7ba30fd4a44ad9afe917c67a8c8/eu-central-1/6415809151001/playlist.m3u8",
+      "id": "1744752014255zff5ukui0",
+      "isFavorite": false
+    },
+    {
+      "name": "Altaghier TV (1080p)",
+      "url": "https://194788.global.ssl.fastly.net/63c63697632705047ffda2da/live_d33349a0962a11ed907dd9e556777b63/rewind-14400.m3u8",
+      "id": "1744752014255upl118t6x",
+      "isFavorite": false
+    },
+    {
+      "name": "Amman TV (720p)",
+      "url": "https://htvnksdtmy.erbvr.com/ammantvhd/ammantvhd.m3u8",
+      "id": "17447520142555agconwcq",
+      "isFavorite": false
+    },
+    {
+      "name": "Jawhara FM (720p) [Not 24/7]",
+      "url": "http://streaming.toutech.net:1935/live/mp4:jawharafm.sdp/playlist.m3u8",
+      "id": "1744752014255in0youraj"
+    },
+    {
+      "name": "Jordan Archive (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Archive/playlist.m3u8",
+      "id": "1744752014255ni3vzghvy"
+    },
+    {
+      "name": "Jordan Comedy (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Comedy/playlist.m3u8",
+      "id": "174475201425586yjyz038"
+    },
+    {
+      "name": "Jordan Drama (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Drama/playlist.m3u8",
+      "id": "174475201425545d78fk7l"
+    },
+    {
+      "name": "Jordan Kitchen (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/cooking/playlist.m3u8",
+      "id": "1744752014255bi9v1qjpb"
+    },
+    {
+      "name": "Jordan Satellite Channel (1080p)",
+      "url": "https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8",
+      "id": "1744752014255heawbt9h0"
+    },
+    {
+      "name": "Jordan Songs (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Song/playlist.m3u8",
+      "id": "1744752014255qb2k9vqoa"
+    },
+    {
+      "name": "Jordan Sport (1080p) [Geo-blocked]",
+      "url": "https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8",
+      "id": "1744752014255kktkqt54c",
+      "isFavorite": true
+    },
+    {
+      "name": "Jordan Tourism (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Tourism/playlist.m3u8",
+      "id": "1744752014255l8ytitumn"
+    },
+    {
+      "name": "Kaifa TV (576p)",
+      "url": "http://82.212.74.2:8000/live/7311.m3u8",
+      "id": "1744752014255npngxy9i5"
+    },
+    {
+      "name": "Melody FM Jordan (720p) [Not 24/7]",
+      "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
+      "id": "17447520142556m3ygqlpg"
+    },
+    {
+      "name": "Radio Fann Jordan Studio (1080p) [Not 24/7]",
+      "url": "http://45.63.116.205/hls2/stream1.m3u8",
+      "id": "1744752014255z2n7xyi6e"
+    },
+    {
+      "name": "Radio Yaqeen Jordan City View (1080p) [Not 24/7]",
+      "url": "http://45.63.116.205/hls4/stream1.m3u8",
+      "id": "1744752014255afu6huh8a"
+    },
+    {
+      "name": "Rotana Radio Jordan Studio (1080p) [Not 24/7]",
+      "url": "http://45.63.116.205/hls/stream1.m3u8",
+      "id": "1744752014255tzlzrzxbj"
+    },
+    {
+      "name": "Rotana Tarab Jordan City View (720p) [Not 24/7]",
+      "url": "http://45.63.116.205/hls3/stream1.m3u8",
+      "id": "1744752014255y3f88skwa"
+    },
+    {
+      "name": "Roya Comedy (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/toa2uuhhygheuly7xtuqrg/roya-comedy/playlist.m3u8",
+      "id": "1744752014255pdsomyzo7"
+    },
+    {
+      "name": "Roya Drama (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/a2le4pbpa6rpzv147haf4w/drama/playlist.m3u8",
+      "id": "1744752014255v98d3pxgf"
+    },
+    {
+      "name": "Roya Kids Originals (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/ptllxjd03j6g9oxxjdfapg/roya-kids-originals/playlist.m3u8",
+      "id": "1744752014255185ftaquv"
+    },
+    {
+      "name": "Roya Kitchen (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/toa2uuhhygheuly7xtuqrg/roya-kitchen/playlist.m3u8",
+      "id": "1744752014255mie52exvc"
+    },
+    {
+      "name": "Roya TV (1080p) [Not 24/7]",
+      "url": "https://royatv-live.daioncdn.net/royatv/royatv.m3u8",
+      "id": "174475201425563to85a59"
+    },
+    {
+      "name": "Roya TV (720p)",
+      "url": "https://weyyak-live.akamaized.net/weyyak_roya/index.m3u8",
+      "id": "17447520142550zueayjrq"
+    },
+    {
+      "name": "Abdulmajeed Abdullah (1080p)",
+      "url": "https://d2hng5r56zpsbw.cloudfront.net/out/v1/9c4c990f44bb4767bb46271f326dd574/index.m3u8",
+      "id": "1744752193222542frcglb"
+    },
+    {
+      "name": "Aflam (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/0044dd4b001a466c941ad77b04a574a2/index.m3u8",
+      "id": "1744752193222wlkir1bdq"
+    },
+    {
+      "name": "Al Arabiya Al Hadath (1080p) [Not 24/7]",
+      "url": "https://av.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8",
+      "id": "1744752193222fh881vq00"
+    },
+    {
+      "name": "Al Ekhbariya (1080p)",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-al-ekhbaria/297b3ef1cd0633ad9cfba7473a686a06/index.m3u8",
+      "id": "1744752193222j20z72oub"
+    },
+    {
+      "name": "Al Ekhbariya (360p)",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/al_ekhbariya/hls_roku/index.m3u8",
+      "id": "1744752193222k2c4qoitr"
+    },
+    {
+      "name": "Al Hadath TV (1080p)",
+      "url": "https://shls-hadath-prod-dub.shahid.net/out/v1/0e1a306399c346faac4226aa0858f99b/index.m3u8",
+      "id": "17447521932224oui8nwhx"
+    },
+    {
+      "name": "Al Hadath TV (1080p) [Not 24/7]",
+      "url": "https://live.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8",
+      "id": "17447521932224gsk69bys"
+    },
+    {
+      "name": "Al Khalij (720p) [Not 24/7]",
+      "url": "https://mn-nl.mncdn.com/khalij/khalij/playlist.m3u8",
+      "id": "1744752193222st32q5jln"
+    },
+    {
+      "name": "Al Quran Al Kareem TV (1080p)",
+      "url": "https://al-ekhbaria-prod-dub.shahid.net/out/v1/9885cab0a3ec4008b53bae57a27ca76b/index.m3u8",
+      "id": "1744752193222cet30qrc4"
+    },
+    {
+      "name": "Al Quran Al Kareem TV (720p)",
+      "url": "http://m.live.net.sa:1935/live/quran/gmswf.m3u8",
+      "id": "1744752193222836irgu5t"
+    },
+    {
+      "name": "Al Quran Al Kareem TV (720p)",
+      "url": "http://m.live.net.sa:1935/live/quran/playlist.m3u8",
+      "id": "1744752193222bed8hfhhj"
+    },
+    {
+      "name": "Al Quran Al Kareem TV (360p)",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/saudi_quran/hls_roku/index.m3u8",
+      "id": "1744752193222xac5chz9b"
+    },
+    {
+      "name": "Al Riyadh Radio (1080p)",
+      "url": "https://live.kwikmotion.com/sbrksariyadhradiolive/srpksariyadhradio/playlist.m3u8",
+      "id": "17447521932229umnd93tg"
+    },
+    {
+      "name": "Al Saudiya (1080p)",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-saudi-tv/2ad66056b51fd8c1b624854623112e43/index.m3u8",
+      "id": "1744752193222ofbzy9qbk"
+    },
+    {
+      "name": "Al Saudiya (360p)",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/saudi_tv/hls_roku/index.m3u8",
+      "id": "174475219322210bn2vb5k"
+    },
+    {
+      "name": "Al Saudiya Alaan (1080p)",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-ksa-now/71ed3aa814c643306c0a8bc4fcc7d17f/index.m3u8",
+      "id": "1744752193222clfy77tmi"
+    },
+    {
+      "name": "Al Sunnah Al Nabawiyah TV (1080p)",
+      "url": "https://sbc-prod-dub-enc.edgenextcdn.net/out/v1/b09bbb8d9b684763be4211b088168de7/index.m3u8",
+      "id": "1744752193222ti0yi8hng"
+    },
+    {
+      "name": "Al Sunnah Al Nabawiyah TV (720p)",
+      "url": "http://m.live.net.sa:1935/live/sunnah/playlist.m3u8",
+      "id": "17447521932226498olsb9"
+    },
+    {
+      "name": "Al Sunnah Al Nabawiyah TV (360p)",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/saudi_sunnah/hls_roku/index.m3u8",
+      "id": "1744752193222zdeu6mlrl"
+    },
+    {
+      "name": "Alkhuzama Radio (1080p)",
+      "url": "https://live.kwikmotion.com/sbrksakhuzamaradiolive/srpkhuzama/playlist.m3u8",
+      "id": "1744752193222cep7v05mc"
+    },
+    {
+      "name": "Asharq Discovery (1080p) [Geo-blocked]",
+      "url": "https://svs.itworkscdn.net/asharqdiscoverylive/asharqd.smil/playlist_dvr.m3u8",
+      "id": "1744752193222zr2a7kh2k"
+    },
+    {
+      "name": "Asharq Documentary (1080p)",
+      "url": "https://svs.itworkscdn.net/asharqdocumentarylive/asharqdocumentary.smil/playlist_dvr.m3u8",
+      "id": "1744752193222yaydfom3y"
+    },
+    {
+      "name": "Asharq News (1080p)",
+      "url": "https://asharq-prod-dub-enc.edgenextcdn.net/out/v1/3b6b4902cf8747a28619411239584002/index.m3u8",
+      "id": "17447521932228tp9mtbol"
+    },
+    {
+      "name": "Asharq News (1080p)",
+      "url": "https://bcovlive-a.akamaihd.net/0b75ef0a49e24704a4ca023d3a82c2df/ap-south-1/6203311941001/playlist.m3u8",
+      "id": "1744752193222nw3ybq4to"
+    },
+    {
+      "name": "Asharq News (1080p)",
+      "url": "https://shls-asharq-prod-dub.shahid.net/out/v1/3b6b4902cf8747a28619411239584002/index.m3u8",
+      "id": "1744752193222tzughrm9w"
+    },
+    {
+      "name": "Asharq News (1080p)",
+      "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
+      "id": "1744752193222n1vuu9msn"
+    },
+    {
+      "name": "Asharq News Portrait (1280p)",
+      "url": "https://bcovlive-a.akamaihd.net/ed81ac1118414d4fa893d3a83ccec9be/eu-central-1/6203311941001/playlist.m3u8",
+      "id": "1744752193222lu0wxw7pn"
+    },
+    {
+      "name": "Asharq Radio (1080p)",
+      "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
+      "id": "1744752193222unqgxs1gv"
+    },
+    {
+      "name": "Atfal & Mawaheb TV (1080p)",
+      "url": "https://5aafcc5de91f1.streamlock.net/atfal1.com/atfal2/playlist.m3u8",
+      "id": "1744752193222hy3toijck"
+    },
+    {
+      "name": "Atfal & Mawaheb TV (1080p)",
+      "url": "https://5d658d7e9f562.streamlock.net/atfal1.com/atfal2/playlist.m3u8",
+      "id": "1744752193222z8cinjwae"
+    },
+    {
+      "name": "Bab Al Hara (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/948c54279b594944adde578c95f1d7d1/index.m3u8",
+      "id": "1744752193222zxahc3gnt"
+    },
+    {
+      "name": "Bedaya TV (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/97427be47b79457b9ca245e22a8db23a/index.m3u8",
+      "id": "1744752193222wt0iwo44b"
+    },
+    {
+      "name": "Big Time Plus (1080p)",
+      "url": "https://big-time-plus-enc.edgenextcdn.net/out/v1/c885383fb76943c98fa223e7fd08b125/index.m3u8",
+      "id": "17447521932228um2yhqrh"
+    },
+    {
+      "name": "Iqraa Arabic (1080p) [Not 24/7]",
+      "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv3/playlist.m3u8",
+      "id": "17447521932228anixopcc"
+    },
+    {
+      "name": "Iqraa Quran (1080p)",
+      "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8",
+      "id": "1744752193222zkl42b0i7"
+    },
+    {
+      "name": "Jeddah Radio (1080p)",
+      "url": "https://live.kwikmotion.com/sbrksajeddahradiolive/srpksajeddahradio/playlist.m3u8",
+      "id": "1744752193222jjv4pw5pk"
+    },
+    {
+      "name": "Rabeh Saqer (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/ea4275b6dc0840c198c17f6dc6f1ec49/index.m3u8",
+      "id": "1744752193222cp3tef4l7"
+    },
+    {
+      "name": "M+ HD (1080p)",
+      "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/m-plus/playlist.m3u8",
+      "id": "1744752193222rp1n0yn5z"
+    },
+    {
+      "name": "Majid Al Mohandis (1080p)",
+      "url": "https://shls-live-mood-ak.akamaized.net/out/v1/8e2419c6c7494dbba478be025af490ee/index.m3u8",
+      "id": "1744752193222xl9ji6baf"
+    },
+    {
+      "name": "Makkah TV (576p)",
+      "url": "https://media2.streambrothers.com:1936/8122/8122/playlist.m3u8",
+      "id": "17447521932222n3lnkqc2"
+    },
+    {
+      "name": "MBC Loud (1080p)",
+      "url": "https://d2lfa0y84k5bwn.cloudfront.net/out/v1/86dd4506a70c4d7fb35e2ab50296d9a3/index.m3u8",
+      "id": "1744752193222dglyw9sqs"
+    },
+    {
+      "name": "MBC Masr Drama (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/08eca926a78a41339b8010c882410307/index.m3u8",
+      "id": "17447521932222ufmeevx8"
+    },
+    {
+      "name": "MBC+ Drama (1080p)",
+      "url": "https://mbcplusdrama-prod-dub-enc.edgenextcdn.net/out/v1/97ca0ce6fc6142f4b14c0a694af59eab/index.m3u8",
+      "id": "1744752193222zokju3jwl"
+    },
+    {
+      "name": "MBC+ Drama (1080p)",
+      "url": "https://shls-mbcplusdrama-prod-dub.shahid.net/out/v1/97ca0ce6fc6142f4b14c0a694af59eab/index.m3u8",
+      "id": "1744752193222zyknqdlxc"
+    },
+    {
+      "name": "Mohammed Abdo (1080p)",
+      "url": "https://d2ow8h651gs7dx.cloudfront.net/out/v1/371fb663da604e659a2fb99bf89d92d4/index.m3u8",
+      "id": "1744752193222bx1vtq7r8"
+    },
+    {
+      "name": "Movies Action (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/46079e838e65490c8299f902a7731168/index.m3u8",
+      "id": "1744752193222d31ciroyd"
+    },
+    {
+      "name": "Movies Thriller (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/f6d718e841f8442f8374de47f18c93a7/index.m3u8",
+      "id": "1744752193222bcrcd5g76"
+    },
+    {
+      "name": "Nidae AlIslam Radio (1080p)",
+      "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
+      "id": "1744752193222zhent7n32"
+    },
+    {
+      "name": "Panorama FM (1080p)",
+      "url": "https://d6izdil55uftn.cloudfront.net/out/v1/0a06d1d6377c47edbd48721ed724bd08/index.m3u8",
+      "id": "1744752193222clyay3wfl"
+    },
+    {
+      "name": "Panorama FM (1080p)",
+      "url": "https://shls-panoramafm-prod-dub.shahid.net/out/v1/66262e420d824475aaae794dc2d69f14/index.m3u8",
+      "id": "1744752193222vqxmig4h7"
+    },
+    {
+      "name": "Quran Radio (1080p)",
+      "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
+      "id": "1744752193222yfrwvhk3s"
+    },
+    {
+      "name": "Ramez (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/0ef83323c0374a1187c182645db2a45f/index.m3u8",
+      "id": "174475219322235p4sqqdq"
+    },
+    {
+      "name": "Rashid AlMajed (1080p)",
+      "url": "https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8",
+      "id": "1744752193222wjoc8e7ti"
+    },
+    {
+      "name": "Rotana Aflam+ HD (1080p)",
+      "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/rotana-aflam-plus/playlist.m3u8",
+      "id": "1744752193222gds7j28uj"
+    },
+    {
+      "name": "Rotana Cinema KSA (1080p)",
+      "url": "https://bcovlive-a.akamaihd.net/9527a892aeaf43019fd9eeb77ad1516e/eu-central-1/6057955906001/playlist.m3u8",
+      "id": "17447521932228hz1l4zuf"
+    },
+    {
+      "name": "Rotana Classic (1080p)",
+      "url": "https://bcovlive-a.akamaihd.net/0debf5648e584e5fb795c3611c5c0252/eu-central-1/6057955906001/playlist.m3u8",
+      "id": "17447521932228lyu6i4ti"
+    },
+    {
+      "name": "Rotana FM KSA (720p)",
+      "url": "rtmp://live.restream.io/pull/play_320121_94512612fd0e084bd284",
+      "id": "1744752193222jb4u04v8v"
+    },
+    {
+      "name": "Saudi Thaqafiya TV (1080p)",
+      "url": "https://thaqafeyyah-ak.akamaized.net/out/v1/f6851f68ada94f82ae6b64a441eb5ab1/index.m3u8",
+      "id": "1744752193222d82vokzf0"
+    },
+    {
+      "name": "Saudia Radio (1080p)",
+      "url": "https://live.kwikmotion.com/sbrksasaudiaradiolive/srpksasaudiaradio/playlist.m3u8",
+      "id": "1744752193222kv426b7qh"
+    },
+    {
+      "name": "SBC (1080p)",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-sbc/90e09c0c28db26435799b4a14892a167/index.m3u8",
+      "id": "1744752193222lbuc91bgu"
+    },
+    {
+      "name": "SSC Action Waleed (1080p) [Not 24/7]",
+      "url": "https://shls-live-event2-prod-dub.shahid.net/out/v1/0456ede1a39145d98b3d8c8062ddc998/index.m3u8",
+      "id": "1744752193222gj8ldb9z5"
+    },
+    {
+      "name": "Tarab (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/90143f040feb40589d18c57863d9e829/index.m3u8",
+      "id": "1744752193222icxte0lgr"
+    },
+    {
+      "name": "Tarab (1080p)",
+      "url": "https://shls-live-mood-ak.akamaized.net/out/v1/90143f040feb40589d18c57863d9e829/index.m3u8",
+      "id": "17447521932221kp6h55oh"
+    },
+    {
+      "name": "Thikrayat TV (1080p)",
+      "url": "https://al-ekhbaria-prod-dub.shahid.net/out/v1/ef87956651694f4ba2ccc16e852dbb95/index.m3u8",
+      "id": "1744752193222magpswt92"
+    },
+    {
+      "name": "Al Resalah (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/risala_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "1744752193222y5qimdmvr"
+    },
+    {
+      "name": "Rotana Clip (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/clip_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "17447521932222sx37ry2q"
+    },
+    {
+      "name": "Rotana Classic (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/classical_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "1744752193222rrsa8rqd8"
+    },
+    {
+      "name": "Rotana Comedy (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/comedy_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "1744752193222pm5tmiqgz"
+    },
+    {
+      "name": "Rotana Drama (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/drama_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "1744752193222onpt685sd"
+    },
+    {
+      "name": "Rotana Khalijia (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/khaleejiya_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "17447521932228xez93j29"
+    },
+    {
+      "name": "LBC (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/lbc_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "1744752193222qprs31w5v"
+    },
+    {
+      "name": "Rotana Cinema KSA (1080p)",
+      "url": "https://rotana.hibridcdn.net/rotana/cinema_net-7Y83PP5adWixDF93/playlist.m3u8",
+      "id": "17447521932227ptemtakd"
+    },
+    {
+      "name": "Fairuz (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/bba3ef00b71b470fa955d93a9ca8c277/index.m3u8",
+      "id": "1744752193222o7vz3e7r5"
+    },
+    {
+      "name": "Abu Dhabi Aloula (1080p)",
+      "url": "https://vo-live.cdb.cdn.orange.com/Content/Channel/AbuDhabiChannel/HLS/index.m3u8",
+      "id": "1744752256288r4obyu49i"
+    },
+    {
+      "name": "Abu Dhabi Emirates (1080p)",
+      "url": "https://vo-live.cdb.cdn.orange.com/Content/Channel/EmiratesChannel/HLS/index.m3u8",
+      "id": "1744752256288xosv561a9"
+    },
+    {
+      "name": "Abu Dhabi Sports 1 (1080p)",
+      "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel1/HLS/index.m3u8",
+      "id": "1744752256288kdtjso4wm"
+    },
+    {
+      "name": "Abu Dhabi Sports 2 (1080p)",
+      "url": "https://tr-live-route.adm.tcon.hlit.hvds.tv/Content/Channel/AbuDhabiSportsChannel2/DASH/master.mpd",
+      "id": "1744752256288iv9kp3h3q"
+    },
+    {
+      "name": "Abu Dhabi Sports 2 (1080p)",
+      "url": "https://vo-live.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel2/HLS/index.m3u8",
+      "id": "174475225628846xp8i7rs"
+    },
+    {
+      "name": "Ajman TV (1080p)",
+      "url": "https://cdn1.logichost.in/ajmantv/live/playlist.m3u8",
+      "id": "1744752256288yzmei43uf"
+    },
+    {
+      "name": "Al Arabiya (1080p)",
+      "url": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
+      "id": "1744752256288vdf3r01dk"
+    },
+    {
+      "name": "Al Arabiya (1080p)",
+      "url": "https://mbc1-enc.edgenextcdn.net/out/v1/f5f319206ed740f9a831f2097c2ead23/index.m3u8",
+      "id": "1744752256288rptxxpb1c"
+    },
+    {
+      "name": "Al Arabiya Business (1080p)",
+      "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
+      "id": "17447522562884nc4uicoq"
+    },
+    {
+      "name": "Al Arabiya Programs (1080p)",
+      "url": "https://d1j4r34gq3qw9y.cloudfront.net/out/v1/96804f3a14864641a21c25e8ca9afb74/index.m3u8",
+      "id": "17447522562886tjia4zro"
+    },
+    {
+      "name": "Al Dafrah TV (720p)",
+      "url": "https://rtmp-live-ingest-eu-west-3-universe-dacast-com.akamaized.net/transmuxv1/streams/dbb8ac05-a020-784c-3a95-6ed027941532.m3u8",
+      "id": "1744752256288rdjxkrgsg"
+    },
+    {
+      "name": "Al Mashhad (1080p)",
+      "url": "https://bcovlive-a.akamaihd.net/20c3ca22be3c4f03b30afbf3c92cfd14/ap-south-1/6313884884001/playlist.m3u8",
+      "id": "174475225628814szfw3ad"
+    },
+    {
+      "name": "Al Qamar TV (1080p)",
+      "url": "https://streamer3.premio.link/alqamar/playlist.m3u8",
+      "id": "1744752256288imrxjxp5p"
+    },
+    {
+      "name": "Al Shallal TV (1080p)",
+      "url": "https://amg01480-alshallalfze-alshallal-ono-q0hfg.amagi.tv/playlist.m3u8",
+      "id": "17447522562885nqdj347b"
+    },
+    {
+      "name": "Al Sharqiya Min Kabla (1080p)",
+      "url": "https://svs.itworkscdn.net/kablatvlive/kabtv1.smil/playlist.m3u8",
+      "id": "174475225628965kpsejzb"
+    },
+    {
+      "name": "Al Wousta TV (1080p)",
+      "url": "https://svs.itworkscdn.net/alwoustalive/alwoustatv.smil/playlist.m3u8",
+      "id": "174475225628925dyj2men"
+    },
+    {
+      "name": "Al Yaum TV (1080p)",
+      "url": "https://iko-live.akamaized.net/AlyuamTV/master.m3u8",
+      "id": "17447522562895ysvsldey"
+    },
+    {
+      "name": "Alarabiya (1080p)",
+      "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/al-arabiya/playlist.m3u8",
+      "id": "17447522562891l3rb2ca4"
+    },
+    {
+      "name": "Alarabiya (1080p)",
+      "url": "https://shls-live-enc.edgenextcdn.net/out/v1/f5f319206ed740f9a831f2097c2ead23/index.m3u8",
+      "id": "174475225628918768mroz"
+    },
+    {
+      "name": "Alarabiya Portrait (720p)",
+      "url": "https://live.alarabiya.net/alarabiapublish/arabiav.smil/playlist.m3u8",
+      "id": "1744752256289oomp2k5as"
+    },
+    {
+      "name": "Baynounah TV (1080p)",
+      "url": "https://vo-live.cdb.cdn.orange.com/Content/Channel/Baynounah/HLS/index.m3u8",
+      "id": "17447522562891jm00vb1c"
+    },
+    {
+      "name": "CNBC Arabiya (1080p)",
+      "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
+      "id": "17447522562893069gibs5"
+    },
+    {
+      "name": "Dubai One (1080p)",
+      "url": "https://dminnvllta.cdn.mgmlcdn.com/dubaione/smil:dubaione.stream.smil/chunklist.m3u8",
+      "id": "17447522562892i904rm9u"
+    },
+    {
+      "name": "Dubai Racing (1080p)",
+      "url": "https://dmisdracta.cdn.mgmlcdn.com/events/smil:events.stream.smil/chunklist.m3u8",
+      "id": "1744752256289eod77otig"
+    },
+    {
+      "name": "Dubai Racing 2 (1080p)",
+      "url": "https://dmithrvllta.cdn.mgmlcdn.com/dubairacing/smil:dubairacing.smil/chunklist.m3u8",
+      "id": "1744752256289078zowchs"
+    },
+    {
+      "name": "Dubai Racing 3 (1080p)",
+      "url": "https://dmithrvllta.cdn.mgmlcdn.com/dubaimubasher/smil:dubaimubasher.smil/chunklist.m3u8",
+      "id": "17447522562892joe3qnol"
+    },
+    {
+      "name": "Dubai Sports 1 (1080p)",
+      "url": "https://dmidspta.cdn.mgmlcdn.com/dubaisports/smil:dubaisports.stream.smil/chunklist.m3u8",
+      "id": "1744752256289mx80sf6yf"
+    },
+    {
+      "name": "Dubai Sports 2 (720p)",
+      "url": "https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd/smil:dubaisportshd.smil/chunklist.m3u8",
+      "id": "1744752256289li48s6lr1"
+    },
+    {
+      "name": "Dubai Sports 3 (1080p) [Not 24/7]",
+      "url": "https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd5/smil:dubaisportshd5.smil/chunklist.m3u8",
+      "id": "1744752256289xx7ynh5ze"
+    },
+    {
+      "name": "Dubai TV (1080p)",
+      "url": "https://dmieigthvllta.cdn.mgmlcdn.com/dubaitvht/smil:dubaitv.stream.smil/chunklist.m3u8",
+      "id": "1744752256289vl89ttp99"
+    },
+    {
+      "name": "Dubai Zaman (1080p) [Not 24/7]",
+      "url": "https://dmiffthftl.cdn.mangomolo.com/dubaizaman/smil:dubaizaman.stream.smil/chunklist.m3u8",
+      "id": "1744752256289tnjztu42u"
+    },
+    {
+      "name": "Fujairah TV (720p)",
+      "url": "https://live.kwikmotion.com/fujairahlive/fujairah.smil/playlist.m3u8",
+      "id": "1744752256289p13nva56d"
+    },
+    {
+      "name": "Just Vogue TV (1080p)",
+      "url": "https://ip100.radyotelekomtv.com:3873/stream/play.m3u8",
+      "id": "174475225628966ozkpja4"
+    },
+    {
+      "name": "Majid TV (1080p)",
+      "url": "https://vo-live.cdb.cdn.orange.com/Content/Channel/MajidChildrenChannel/HLS/index.m3u8",
+      "id": "17447522562897bu3zr745"
+    },
+    {
+      "name": "MBC 1 (1080p)",
+      "url": "https://d3o3cim6uzorb4.cloudfront.net/out/v1/0965e4d7deae49179172426cbfb3bc5e/index.m3u8",
+      "id": "1744752256289d20da2o4j"
+    },
+    {
+      "name": "MBC 1 (1080p)",
+      "url": "https://mbc1-enc.edgenextcdn.net/out/v1/0965e4d7deae49179172426cbfb3bc5e/index.m3u8",
+      "id": "1744752256289x6uxgog95"
+    },
+    {
+      "name": "MBC 1 USA (1080p)",
+      "url": "https://shls-mbc1na-prod-dub.shahid.net/out/v1/84ab37e99d6e4b16b33c6600f94f6ccb/index.m3u8",
+      "id": "1744752256289or0zua0zy"
+    },
+    {
+      "name": "MBC 2 (480p)",
+      "url": "https://edge66.magictvbox.com/liveApple/MBC_2/index.m3u8",
+      "id": "1744752256289unrobc13q"
+    },
+    {
+      "name": "MBC 3 KSA (1080p)",
+      "url": "https://shls-mbc3-prod-dub.shahid.net/out/v1/d5bbe570e1514d3d9a142657d33d85e6/index.m3u8",
+      "id": "1744752256289uh4886n1g"
+    },
+    {
+      "name": "MBC 4 (1080p)",
+      "url": "https://shls-masr-prod-dub.shahid.net/out/v1/c08681f81775496ab4afa2bac7ae7638/index.m3u8",
+      "id": "17447522562894epu84fjq"
+    },
+    {
+      "name": "MBC 4 (1080p)",
+      "url": "https://shls-mbc4-prod-dub.shahid.net/out/v1/c08681f81775496ab4afa2bac7ae7638/index.m3u8",
+      "id": "17447522562895li7bku0i"
+    },
+    {
+      "name": "MBC 5 (1080p)",
+      "url": "https://shls-mbc5-prod-dub.shahid.net/out/v1/2720564b6a4641658fdfb6884b160da2/index.m3u8",
+      "id": "1744752256289j3iv4f8dq"
+    },
+    {
+      "name": "MBC Bollywood (1080p) [Geo-blocked]",
+      "url": "https://shls-mbcbollywood-prod-dub.shahid.net/out/v1/a79c9d7ef2a64a54a64d5c4567b3462a/index.m3u8",
+      "id": "1744752256289pzte4n1zr"
+    },
+    {
+      "name": "MBC Drama KSA (1080p)",
+      "url": "https://mbc1-enc.edgenextcdn.net/out/v1/b0b3a0e6750d4408bb86d703d5feffd1/index.m3u8",
+      "id": "1744752256289gezk4f01y"
+    },
+    {
+      "name": "MBC FM (1080p)",
+      "url": "https://dbbv9umqcd7cs.cloudfront.net/out/v1/db15b75c3cc0400c91961468d6a232ac/index.m3u8",
+      "id": "1744752256289rgknmz46a"
+    },
+    {
+      "name": "MBC FM (1080p)",
+      "url": "https://mbcfm-riyadh-prod-dub.shahid.net/out/v1/69c8a03f507e422f99cf5c07291c9e3a/index.m3u8",
+      "id": "1744752256289aubnccl4g"
+    },
+    {
+      "name": "MBC Masr 1 (1080p)",
+      "url": "https://shls-masr-prod-dub.shahid.net/out/v1/d5036cabf11e45bf9d0db410ca135c18/index.m3u8",
+      "id": "1744752256289evscyge8z"
+    },
+    {
+      "name": "MBC Masr 2 (1080p)",
+      "url": "https://shls-masr2-prod-dub.shahid.net/out/v1/f683685242b549f48ea8a5171e3e993a/index.m3u8",
+      "id": "1744752256289m7gdbw3ul"
+    },
+    {
+      "name": "MBC Persia (1080p)",
+      "url": "https://shls-mbcpersia-prod-dub.shahid.net/out/v1/bdc7cd0d990e4c54808632a52c396946/index.m3u8",
+      "id": "1744752256289w7rx38xtw"
+    },
+    {
+      "name": "National Geographic Abu Dhabi (1080p) [Geo-blocked]",
+      "url": "https://vo-live.cdb.cdn.orange.com/Content/Channel/NationalGeographicHDChannel/HLS/index.m3u8",
+      "id": "1744752256289fcdlfydy0"
+    },
+    {
+      "name": "Noor Dubai (1080p)",
+      "url": "https://dmiffthftl.cdn.mangomolo.com/noordubaitv/smil:noordubaitv.smil/chunklist.m3u8",
+      "id": "1744752256289xgtlswcps"
+    },
+    {
+      "name": "Nour TV (720p)",
+      "url": "https://cdn.bestream.io:19360/elfaro4/elfaro4.m3u8",
+      "id": "17447522562898fjxnqgbz"
+    },
+    {
+      "name": "Peace TV Bangla (1080p)",
+      "url": "https://dzkyvlfyge.erbvr.com/PeaceTvBangla/index.m3u8",
+      "id": "1744752256289xovtcnqjz"
+    },
+    {
+      "name": "Peace TV Chinese (1080p)",
+      "url": "https://dzkyvlfyge.erbvr.com/PeaceTvChinese/index.m3u8",
+      "id": "1744752256289xja8yu5wc"
+    },
+    {
+      "name": "Peace TV English (1080p)",
+      "url": "https://dzkyvlfyge.erbvr.com/PeaceTvEnglish/index.m3u8",
+      "id": "1744752256289cyibs6l8c"
+    },
+    {
+      "name": "Peace TV Urdu (1080p)",
+      "url": "https://dzkyvlfyge.erbvr.com/PeaceTvUrdu/index.m3u8",
+      "id": "17447522562891qts6nu2v"
+    },
+    {
+      "name": "PMC (1080p)",
+      "url": "https://hls.pmchd.live/hls/stream.m3u8",
+      "id": "17447522562890glsxrfss"
+    },
+    {
+      "name": "PMC Royale (720p) [Not 24/7]",
+      "url": "https://rohls.pmc.live/hls/stream.m3u8",
+      "id": "17447522562893qp7ifpr9"
+    },
+    {
+      "name": "Pulse95 Radio (1080p)",
+      "url": "https://svs.itworkscdn.net/pulse95live/pulse96vision/playlist.m3u8",
+      "id": "17447522562894jegakgb3"
+    },
+    {
+      "name": "Sama Dubai (1080p)",
+      "url": "https://dmieigthvllta.cdn.mgmlcdn.com/samadubaiht/smil:samadubai.stream.smil/chunklist.m3u8",
+      "id": "1744752256289njwlbwai9"
+    },
+    {
+      "name": "Sharjah 2 (1080p)",
+      "url": "https://svs.itworkscdn.net/smc2live/smc2tv.smil/playlist.m3u8",
+      "id": "1744752256289tp5poo5fb"
+    },
+    {
+      "name": "Sharjah Radio (1080p)",
+      "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
+      "id": "1744752256289hatv0p9pk"
+    },
+    {
+      "name": "Sharjah Radio Quran (1080p)",
+      "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
+      "id": "1744752256289lx4oj8frx"
+    },
+    {
+      "name": "Sharjah Sports TV (1080p)",
+      "url": "https://svs.itworkscdn.net/smc4sportslive/smc4.smil/playlist.m3u8",
+      "id": "1744752256289p44a1gmw5"
+    },
+    {
+      "name": "Sharjah TV (1080p)",
+      "url": "https://svs.itworkscdn.net/smc1live/smc1.smil/playlist.m3u8",
+      "id": "1744752256289ee2ops2ju"
+    },
+    {
+      "name": "Sharjah TV (360p)",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/sharjah_tv/hls_roku/index.m3u8",
+      "id": "1744752256289l5ymcuw7e"
+    },
+    {
+      "name": "Sky News Arabia (1080p) [Not 24/7]",
+      "url": "https://stream.skynewsarabia.com/ott/ott.m3u8",
+      "id": "1744752256289qm4kdqu11"
+    },
+    {
+      "name": "Sky News Arabia (720p) [Not 24/7]",
+      "url": "https://stream.skynewsarabia.com/hls/sna.m3u8",
+      "id": "17447522562890gufgdjgw"
+    },
+    {
+      "name": "Sky News Arabia (Portrait) (1280p) [Not 24/7]",
+      "url": "https://stream.skynewsarabia.com/vertical/vertical.m3u8",
+      "id": "1744752256289m99uvbgvb"
+    },
+    {
+      "name": "Wanasah (1080p)",
+      "url": "https://shls-wanasah-prod-dub.shahid.net/out/v1/c84ef3128e564b74a6a796e8b6287de6/index.m3u8",
+      "id": "17447522562897ey8cbjtb"
+    },
+    {
+      "name": "Watar Radio (1080p)",
+      "url": "https://svs.itworkscdn.net/smcwatarlive/smcwatar/playlist.m3u8",
+      "id": "1744752256289zqxwmiv5a"
+    },
+    {
+      "name": "Weyyak Action (1080p) [Geo-blocked]",
+      "url": "https://weyyak-live.akamaized.net/weyyak_action/index.m3u8",
+      "id": "1744752256289fwyc1ryb9"
+    },
+    {
+      "name": "Weyyak Drama (720p) [Geo-blocked]",
+      "url": "https://weyyak-live.akamaized.net/weyyak_drama/index.m3u8",
+      "id": "1744752256289yz6ma0mog"
+    },
+    {
+      "name": "Weyyak Mix (720p) [Geo-blocked]",
+      "url": "https://weyyak-live.akamaized.net/weyyak_mix/index.m3u8",
+      "id": "1744752256289oorjyojun"
+    },
+    {
+      "name": "Weyyak Nawaem (720p) [Geo-blocked]",
+      "url": "https://weyyak-live.akamaized.net/weyyak_nawaem/index.m3u8",
+      "id": "1744752256289d8frfh3pw"
+    },
+    {
+      "name": "Yas TV (1080p)",
+      "url": "https://vo-live.cdb.cdn.orange.com/Content/Channel/YASSportsChannel/HLS/index.m3u8",
+      "id": "1744752256289spyjez6re"
+    },
+    {
+      "name": "Zee Aflam (720p) [Geo-blocked]",
+      "url": "https://weyyak-live.akamaized.net/weyyak_zee_aflam/index.m3u8",
+      "id": "17447522562893yhkl8gsi"
+    },
+    {
+      "name": "Zee Alwan (720p) [Geo-blocked]",
+      "url": "https://weyyak-live.akamaized.net/weyyak_zee_alwan/index.m3u8",
+      "id": "1744752256289jn0j4v7e4"
+    },
+    {
+      "name": "Spacetoon Arabic (1080p)",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-spacetoon/d8382fb9ab4b2307058f12c7ea90db54/index.m3u8",
+      "id": "1744752256289lfsmyud9l"
+    },
+    {
+      "name": "Al Araby TV (1080p)",
+      "url": "https://alarabyta.cdn.octivid.com/alaraby/smil:alaraby.stream.smil/chunklist.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567zgepbjrtv"
+    },
+    {
+      "name": "Al Araby TV (1080p)",
+      "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=5616",
+      "isFavorite": false,
+      "id": "1744754990567r4a3nfj14"
+    },
+    {
+      "name": "Al Araby TV 2 (1080p)",
+      "url": "https://alarabyta.cdn.octivid.com/alaraby2n/smil:alaraby2n.stream.smil/chunklist.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567u4wj7ufvp"
+    },
+    {
+      "name": "Al Araby TV 2 (1080p)",
+      "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=5617",
+      "isFavorite": false,
+      "id": "1744754990567n7e4gg8ka"
+    },
+    {
+      "name": "Al Jazeera (1080p)",
+      "url": "https://live-hls-apps-aja-fa.getaj.net/AJA/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567fadqj79oj"
+    },
+    {
+      "name": "Al Jazeera (1080p)",
+      "url": "https://live-hls-apps-aja-v3-fa.getaj.net/AJA/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567lszep3u1p"
+    },
+    {
+      "name": "Al Jazeera (720p)",
+      "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/al-jazeera/playlist.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567s96e34g86"
+    },
+    {
+      "name": "Al Jazeera Arabic (1080p)",
+      "url": "https://live-hls-v3-aja.getaj.net/AJA-V3/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567b9zgn56gd"
+    },
+    {
+      "name": "Al Jazeera Arabic (1080p)",
+      "url": "https://live-hls-web-aja.getaj.net/AJA/index.m3u8",
+      "isFavorite": true,
+      "id": "1744754990567wpwaniyc2"
+    },
+    {
+      "name": "Al Jazeera Balkans (1080p)",
+      "url": "https://live-hls-web-ajb.getaj.net/AJB/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567j9c3i8twr"
+    },
+    {
+      "name": "Al Jazeera Documentary (1080p) [Geo-blocked]",
+      "url": "https://live-hls-apps-ajd-fa.getaj.net/AJD/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567dg17rxcma"
+    },
+    {
+      "name": "Al Jazeera Documentary (1080p) [Geo-blocked]",
+      "url": "https://live-hls-apps-ajd-v3-fa.getaj.net/AJD/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567qx5y4yeqf"
+    },
+    {
+      "name": "Al Jazeera Documentary (1080p) [Geo-blocked]",
+      "url": "https://live-hls-web-ajd.getaj.net/AJD/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567xttvckglv"
+    },
+    {
+      "name": "Al Jazeera English",
+      "url": "https://d1cy85syyhvqz5.cloudfront.net/v1/master/7b67fbda7ab859400a821e9aa0deda20ab7ca3d2/aljazeeraLive/AJE/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567wyr6ucunb"
+    },
+    {
+      "name": "Al Jazeera English (1080p)",
+      "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/al-jazeera-english/playlist.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567ob19em307"
+    },
+    {
+      "name": "Al Jazeera English (1080p)",
+      "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+      "isFavorite": false,
+      "id": "17447549905678t6gbnknq"
+    },
+    {
+      "name": "Al Jazeera English (1080p)",
+      "url": "https://live-hls-apps-aje-v3-fa.getaj.net/AJE/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567d7vxdkqbh"
+    },
+    {
+      "name": "Al Jazeera English (1080p)",
+      "url": "https://live-hls-v3-aje.getaj.net/AJE-V3/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567pprbdil2y"
+    },
+    {
+      "name": "Al Jazeera English (1080p)",
+      "url": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
+      "isFavorite": false,
+      "id": "17447549905676t2t08no6"
+    },
+    {
+      "name": "Al Jazeera Mubasher (1080p)",
+      "url": "https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567rly9c84om"
+    },
+    {
+      "name": "Al Jazeera Mubasher (1080p)",
+      "url": "https://live-hls-apps-ajm-v3-fa.getaj.net/AJM/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567ybgtx1w7v"
+    },
+    {
+      "name": "Al Jazeera Mubasher (1080p)",
+      "url": "https://live-hls-web-ajm.getaj.net/AJM/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567u2h4gqc1c"
+    },
+    {
+      "name": "Al Jazeera Mubasher 24 (1080p)",
+      "url": "https://live-hls-apps-ajm24-fa.getaj.net/AJM24/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567k1w7r1hi7"
+    },
+    {
+      "name": "Al Jazeera Mubasher 24 (1080p)",
+      "url": "https://live-hls-web-ajm24-fa.getaj.net/AJM24/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567esona2ful"
+    },
+    {
+      "name": "Al Jazeera Mubasher Broadcast 2 (1080p)",
+      "url": "https://live-hls-apps-ajm2-fa.getaj.net/AJM2/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567weyszma6g"
+    },
+    {
+      "name": "Al Jazeera Mubasher Broadcast 2 (1080p)",
+      "url": "https://live-hls-web-ajm2-fa.getaj.net/AJM2/index.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567tne0b0jrp"
+    },
+    {
+      "name": "Al Rayyan (1080p)",
+      "url": "https://alrayyancdn.vidgyor.com/pub-noalrayy3pwz0l/liveabr/playlist_dvr.m3u8",
+      "isFavorite": false,
+      "id": "17447549905679v5bthvc7"
+    },
+    {
+      "name": "Al Rayyan Al Qadeem (1080p)",
+      "url": "https://alrayyancdn.vidgyor.com/pub-nooldraybinbdh/liveabr/playlist_dvr.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567n7gini7nw"
+    },
+    {
+      "name": "Alaraby 2 TV (1080p)",
+      "url": "https://alaraby.cdn.octivid.com/alaraby2n/smil:alaraby2n.stream.smil/chunklist.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567ueulmb7b1"
+    },
+    {
+      "name": "Alaraby 2 TV (1080p)",
+      "url": "https://origin-cae-t482536.cdn.nextologies.com/63d8c759c5db83b4/25c4f89d27a79014ALA2306/playlist.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567mtc85egtw"
+    },
+    {
+      "name": "Alaraby TV (1080p)",
+      "url": "https://alaraby.cdn.octivid.com/alaraby/smil:alaraby.stream.smil/chunklist.m3u8",
+      "isFavorite": false,
+      "id": "17447549905672rhsx01cb"
+    },
+    {
+      "name": "Alaraby TV (1080p)",
+      "url": "https://origin-cae-t482536.cdn.nextologies.com/6837800d47c40cb2/1544c5accd8e84d5ALA2306/playlist.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567rdexaquz9"
+    },
+    {
+      "name": "Alkass Five (1080p)",
+      "url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass5nnha/master.m3u8",
+      "isFavorite": false,
+      "id": "17447549905670vk3wc299"
+    },
+    {
+      "name": "Alkass Four (1080p)",
+      "url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass4cn/master.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567109jrgmz3"
+    },
+    {
+      "name": "Alkass One (1080p)",
+      "url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass1mhu/master.m3u8",
+      "isFavorite": false,
+      "id": "17447549905670x9lms0kh"
+    },
+    {
+      "name": "Alkass SHOOF (1080p)",
+      "url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6Shoof1/master.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567lwb67rwmg"
+    },
+    {
+      "name": "Alkass Six (1080p)",
+      "url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6buzat/master.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567w3s3xkhti"
+    },
+    {
+      "name": "Alkass Three (1080p)",
+      "url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass3vak/master.m3u8",
+      "isFavorite": false,
+      "id": "17447549905674u59fe2lq"
+    },
+    {
+      "name": "Alkass Two (1080p)",
+      "url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass2hef/master.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567ce44f6qf0"
+    },
+    {
+      "name": "Qatar Television (720p)",
+      "url": "https://qatartv.akamaized.net/hls/live/2026573/qtv1/master.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567ssbmrkeru"
+    },
+    {
+      "name": "Qatar Television 2 (720p)",
+      "url": "https://qatartv.akamaized.net/hls/live/2026574/qtv2/master.m3u8",
+      "isFavorite": false,
+      "id": "1744754990567aa9hzxt73"
+    },
+    {
+      "name": "Qatar Television 2 (1080p)",
+      "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
+      "isFavorite": false,
+      "id": "17447549905678s1gpndlv"
+    },
+    {
+      "name": "Qatar Television (1080p)",
+      "url": "https://live.kwikmotion.com/qtv1live/qtv1.smil/playlist.m3u8",
+      "isFavorite": false,
+      "id": "17447549905671lq2o9sn9"
+    }
+  ],
+  "timestamp": "2025-04-15T22:23:41.608Z"
+}
