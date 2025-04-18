@@ -317,6 +317,9 @@ class IPTVApp {
 
     async loadDefaultChannels() {
         const possiblePaths = [
+            'Channels/merged_playlist.m3u',
+            './Channels/merged_playlist.m3u',
+            '/Channels/merged_playlist.m3u',
             'channels/merged_playlist.m3u',
             './channels/merged_playlist.m3u',
             '/channels/merged_playlist.m3u',
