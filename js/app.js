@@ -316,53 +316,50 @@ class IPTVApp {
     }
 
     async loadDefaultChannels() {
-        try {
-            // Try different possible paths for the playlist
-            const paths = [
-                'channels/merged_playlist.m3u',
-                './channels/merged_playlist.m3u',
-                '/channels/merged_playlist.m3u',
-                'merged_playlist.m3u'
-            ];
+        const possiblePaths = [
+            'channels/merged_playlist.m3u',
+            './channels/merged_playlist.m3u',
+            '/channels/merged_playlist.m3u',
+            'merged_playlist.m3u'
+        ];
 
-            let response;
-            let content;
-
-            // Try each path until one works
-            for (const path of paths) {
-                try {
-                    response = await fetch(path);
-                    if (response.ok) {
-                        content = await response.text();
-                        if (content && content.includes('#EXTM3U')) {
-                            this.processM3UContent(content);
-                            return; // Exit if successful
-                        }
+        let lastError = null;
+        
+        for (const path of possiblePaths) {
+            try {
+                console.log(`Trying to load playlist from: ${path}`);
+                const response = await fetch(path);
+                if (response.ok) {
+                    const content = await response.text();
+                    if (content.includes('#EXTM3U')) {
+                        this.processM3UContent(content);
+                        return;
+                    } else {
+                        throw new Error('Invalid M3U format');
                     }
-                } catch (e) {
-                    console.log(`Failed to load from ${path}:`, e);
                 }
+            } catch (error) {
+                console.error(`Failed to load from ${path}:`, error);
+                lastError = error;
             }
-
-            // If we get here, none of the paths worked
-            throw new Error('Could not load default playlist from any location');
-
-        } catch (error) {
-            console.error('Error loading default channels:', error);
-            // Show error message to user
-            const errorMessage = document.createElement('div');
-            errorMessage.className = 'error-message';
-            errorMessage.innerHTML = `
-                <p>Failed to load default channels. Please try:</p>
-                <ul>
-                    <li>Loading a playlist manually using the URL or file upload</li>
-                    <li>Checking your internet connection</li>
-                    <li>Refreshing the page</li>
-                </ul>
-                <p>Error details: ${error.message}</p>
-            `;
-            document.getElementById('channelsList').appendChild(errorMessage);
         }
+
+        // If we get here, all attempts failed
+        console.error('All attempts to load default playlist failed:', lastError);
+        
+        // Show error message to user
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message';
+        errorMessage.innerHTML = `
+            <p>Failed to load default channels. Please try:</p>
+            <ul>
+                <li>Loading a playlist manually using the URL or file upload</li>
+                <li>Checking your internet connection</li>
+                <li>Refreshing the page</li>
+            </ul>
+            <p>Error details: ${lastError ? lastError.message : 'Could not load default playlist from any location'}</p>
+        `;
+        document.getElementById('channelsList').appendChild(errorMessage);
     }
 
     setupSwipeHandlers() {
