@@ -316,7 +316,12 @@ class IPTVApp {
     }
 
     async loadDefaultChannels() {
+        // Show loading indicator
+        const channelsList = document.getElementById('channelsList');
+        channelsList.innerHTML = '<div class="loading-message">Loading channels...</div>';
+
         const possiblePaths = [
+            'https://raw.githubusercontent.com/waheeb1983/iptv-player/master/Channels/merged_playlist.m3u',
             'Channels/merged_playlist.m3u',
             './Channels/merged_playlist.m3u',
             '/Channels/merged_playlist.m3u',
@@ -327,11 +332,14 @@ class IPTVApp {
         ];
 
         let lastError = null;
+        let lastResponse = null;
         
         for (const path of possiblePaths) {
             try {
                 console.log(`Trying to load playlist from: ${path}`);
                 const response = await fetch(path);
+                lastResponse = response;
+                
                 if (response.ok) {
                     const content = await response.text();
                     if (content.includes('#EXTM3U')) {
@@ -340,6 +348,8 @@ class IPTVApp {
                     } else {
                         throw new Error('Invalid M3U format');
                     }
+                } else {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
             } catch (error) {
                 console.error(`Failed to load from ${path}:`, error);
@@ -350,9 +360,17 @@ class IPTVApp {
         // If we get here, all attempts failed
         console.error('All attempts to load default playlist failed:', lastError);
         
-        // Show error message to user
+        // Show error message to user with more specific details
         const errorMessage = document.createElement('div');
         errorMessage.className = 'error-message';
+        
+        let errorDetails = 'Could not load default playlist from any location';
+        if (lastError) {
+            errorDetails = lastError.message;
+        } else if (lastResponse) {
+            errorDetails = `HTTP error! status: ${lastResponse.status}`;
+        }
+
         errorMessage.innerHTML = `
             <p>Failed to load default channels. Please try:</p>
             <ul>
@@ -360,9 +378,11 @@ class IPTVApp {
                 <li>Checking your internet connection</li>
                 <li>Refreshing the page</li>
             </ul>
-            <p>Error details: ${lastError ? lastError.message : 'Could not load default playlist from any location'}</p>
+            <p>Error details: ${errorDetails}</p>
+            <button class="retry-button" onclick="app.loadDefaultChannels()">Retry Loading</button>
         `;
-        document.getElementById('channelsList').appendChild(errorMessage);
+        channelsList.innerHTML = '';
+        channelsList.appendChild(errorMessage);
     }
 
     setupSwipeHandlers() {
