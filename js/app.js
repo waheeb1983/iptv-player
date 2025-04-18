@@ -317,11 +317,36 @@ class IPTVApp {
 
     async loadDefaultChannels() {
         try {
-            const response = await fetch('channels/merged_playlist.m3u');
-            if (response.ok) {
-                const content = await response.text();
-                this.processM3UContent(content);
+            // Try different possible paths for the playlist
+            const paths = [
+                'channels/merged_playlist.m3u',
+                './channels/merged_playlist.m3u',
+                '/channels/merged_playlist.m3u',
+                'merged_playlist.m3u'
+            ];
+
+            let response;
+            let content;
+
+            // Try each path until one works
+            for (const path of paths) {
+                try {
+                    response = await fetch(path);
+                    if (response.ok) {
+                        content = await response.text();
+                        if (content && content.includes('#EXTM3U')) {
+                            this.processM3UContent(content);
+                            return; // Exit if successful
+                        }
+                    }
+                } catch (e) {
+                    console.log(`Failed to load from ${path}:`, e);
+                }
             }
+
+            // If we get here, none of the paths worked
+            throw new Error('Could not load default playlist from any location');
+
         } catch (error) {
             console.error('Error loading default channels:', error);
             // Show error message to user
@@ -330,10 +355,11 @@ class IPTVApp {
             errorMessage.innerHTML = `
                 <p>Failed to load default channels. Please try:</p>
                 <ul>
-                    <li>Loading a playlist manually</li>
+                    <li>Loading a playlist manually using the URL or file upload</li>
                     <li>Checking your internet connection</li>
                     <li>Refreshing the page</li>
                 </ul>
+                <p>Error details: ${error.message}</p>
             `;
             document.getElementById('channelsList').appendChild(errorMessage);
         }
