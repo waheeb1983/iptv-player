@@ -98,6 +98,11 @@ class IPTVApp {
         document.getElementById('videoPlayer').addEventListener('error', () => {
             this.updateCurrentChannel('Error playing channel');
         });
+
+        // Reset channels button
+        document.getElementById('resetChannels').addEventListener('click', () => {
+            this.resetChannels();
+        });
     }
 
     setupTheme() {
@@ -448,6 +453,47 @@ class IPTVApp {
                 channel.url === this.player.video.src
             );
             currentChannelElement.textContent = currentChannel ? currentChannel.info.title : 'No channel selected';
+        }
+    }
+
+    async resetChannels() {
+        // Show loading indicator
+        const channelsList = document.getElementById('channelsList');
+        channelsList.innerHTML = '<div class="loading-message">Resetting channels...</div>';
+
+        try {
+            // Clear any saved channels
+            localStorage.removeItem('savedChannels');
+            localStorage.removeItem('favorites');
+
+            // Reload default channels
+            await this.loadDefaultChannels();
+
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.innerHTML = `
+                <p>Channels have been reset successfully!</p>
+                <p>Default playlist has been reloaded.</p>
+            `;
+            channelsList.appendChild(successMessage);
+
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+
+        } catch (error) {
+            console.error('Error resetting channels:', error);
+            
+            // Show error message
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-message';
+            errorMessage.innerHTML = `
+                <p>Failed to reset channels. Please try again.</p>
+                <p>Error details: ${error.message}</p>
+            `;
+            channelsList.appendChild(errorMessage);
         }
     }
 }
