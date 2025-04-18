@@ -3,70 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A modern web-based IPTV player for streaming and managing your channels">
-    <meta name="theme-color" content="#2196F3">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>IPTV Player</title>
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAArNJREFUWEftl01IVFEUx3/nvWmyD6KoRRGBhFALF5KBRbRxUByyIqJNLWojQosWQRBUq6BFq6BVGBQURRsXghAkFH0sIiJoU9AHFBhFH0QWVDPN3BPnvpl5b+57b8ax0TY9eDD3nnvu+Z3/Pee8e0VVWc6wluUe/geQGMHg4KDGI0F9/vlQVevxZ7Isq7q2tnZVPB5/EwRCIIDh4eGmjo6OG8BxYBBIAk3AMuAj0B0Nh+93dXV9mQ0iEYCq2qOjo1f37t17G9gPvHbX7gKagbvAEPA9lUo97uvrOxKJRH4lBfEHQFWtoaGhS21tbbeAncCQqp4WkYfAFmCfqr4UkTZV/QBkgHQmk3nS399/KBQKZecKYgZAVa3BwcGL7e3tPUAj8E1VT4nII2A70KWqfSKyA/gEjKtqRkRGMpnM0/7+/oMiYs8FxDSA/v7+Cx0dHbeB9cB3VT0pIo+BrcBZVX0mIruBz8CEqk6KyHfgZTqdfpZIJA6IiDUXEAUAqmoNDAyc37NnTw+wCvipqqfsyMEWoFNVX4jIXuALMKmqUyIyBrwZGxt7nkwm94tIJimIPABVtfr6+s61trbeBVYCv1T1hIg8AbYBF1T1lYjsB74CU6qaFpFx4O34+PiLZDK5T0SsJCB8AFTVunPnztmWlpZ7QBj4raqnReQpsAO4pKqvReQg8A2YVtWMiEwA78bHx18ODQ3tFZFsEhB5AHfv3j3T3Nx8H6gDplX1jIg8B3YCl1X1jYgcBr4DM6qaFZFJIJVKpV4NDw/vEZHfiUAUWoGIHAEuAhFgRlXPicgLYBdwVVXfisifJZgBLBGZAj6kUqnXIyMju0VkJgmInBWo6lHgAlALZFX1vIj0AruBa6r6TkQOAT+AjKpmRWQK+JhOp/tGR0d3iUg2CYicFahqO3DcBZJV1Qsi8hLYA1xX1fcicrAAhCUik8Cn6enp/lQqtVNEbpRFDvwBvQbhIehW/UYAAAAASUVORK5CYII=">
-    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>IPTV Player</h1>
-        
-        <div class="main-content">
-            <div class="channels-section">
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search channels..." oninput="filterChannels()">
-                </div>
+    <div class="app-container">
+        <!-- Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
 
-                <div class="channels-actions">
-                    <button onclick="exportChannels()" class="action-btn">Export Channels</button>
-                    <input type="file" id="importFile" accept=".json" onchange="importChannels(event)" style="display: none;">
-                    <button onclick="document.getElementById('importFile').click()" class="action-btn">Import Channels</button>
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>IPTV Player</h2>
+                <div class="player-stats">
+                    <span id="totalChannels">0 Channels</span>
+                    <span id="favoritesCount">0 Favorites</span>
                 </div>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="sidebar-tabs">
+                <button class="tab-btn active" data-tab="channels">
+                    <i class="fas fa-tv"></i>
+                    <span>Channels</span>
+                </button>
+                <button class="tab-btn" data-tab="favorites">
+                    <i class="fas fa-star"></i>
+                    <span>Favorites</span>
+                </button>
+            </div>
 
-                <div class="favorites-section">
-                    <h3>Favorites</h3>
-                    <ul id="favoriteUrls"></ul>
-                </div>
+            <!-- Search Container -->
+            <div class="search-container">
+                <input type="text" id="channelSearch" placeholder="Search channels...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
 
-                <div class="all-channels-section">
-                    <h3>All Channels</h3>
-                    <ul id="savedUrls"></ul>
+            <!-- Channels List -->
+            <div class="channels-section active" id="channelsSection">
+                <div class="channels-list" id="channelsList">
+                    <!-- Channels will be populated here -->
                 </div>
             </div>
 
-            <div class="player-section">
-                <div class="player-container">
-                    <video id="player" class="video-js vjs-default-skin" controls>
-                        <p class="vjs-no-js">
-                            To view this video please enable JavaScript, and consider upgrading to a
-                            web browser that supports HTML5 video
-                        </p>
-                    </video>
+            <!-- Favorites List -->
+            <div class="channels-section" id="favoritesSection">
+                <div class="channels-list" id="favoritesList">
+                    <!-- Favorites will be populated here -->
                 </div>
+            </div>
+        </div>
 
-                <div class="input-section">
-                    <div class="add-channel">
-                        <h3>Add Channel</h3>
-                        <input type="text" id="urlName" placeholder="Channel Name">
-                        <input type="text" id="iptvUrl" placeholder="Channel URL">
-                        <button onclick="addUrl()">Add Channel</button>
-                    </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Player Controls -->
+            <div class="player-controls">
+                <div class="player-info">
+                    <span id="currentChannel">No channel selected</span>
+                    <span id="streamQuality">Auto</span>
+                </div>
+                <div class="theme-toggle">
+                    <button id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
 
-                    <div class="import-m3u">
-                        <h3>Import M3U</h3>
-                        <input type="file" id="m3uFile" accept=".m3u,.m3u8">
-                        <button onclick="handleM3UFile()">Import M3U</button>
-                    </div>
+            <!-- Video Player -->
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    Your browser does not support the video tag.
+                </video>
+                <div id="playerError" class="error-message" style="display: none;">
+                    <p>Unable to play this stream. The stream might be:</p>
+                    <ul>
+                        <li>Protected or require authentication</li>
+                        <li>In a format not supported by your browser</li>
+                        <li>Currently unavailable</li>
+                    </ul>
+                    <p>Try another channel or check the stream URL.</p>
+                </div>
+            </div>
+
+            <!-- Playlist Loader -->
+            <div class="playlist-loader">
+                <div class="input-group">
+                    <input type="text" id="m3uUrl" placeholder="Enter M3U URL">
+                    <button id="loadUrl" class="primary-btn">
+                        <i class="fas fa-cloud-download-alt"></i>
+                        Load URL
+                    </button>
+                </div>
+                <div class="input-group">
+                    <input type="file" id="m3uFile" accept=".m3u,.m3u8" style="display: none;">
+                    <button id="loadFile" class="secondary-btn">
+                        <i class="fas fa-folder-open"></i>
+                        Load File
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/m3u-parser.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html> 
