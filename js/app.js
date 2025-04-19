@@ -5,7 +5,6 @@ class IPTVApp {
         this.setupEventListeners();
         this.setupTheme();
         this.loadDefaultChannels();
-        this.currentTab = 'channels';
         this.setupSidebar();
         this.setupSwipeHandlers();
         this.updateStats();
@@ -20,6 +19,9 @@ class IPTVApp {
         } else {
             sidebar.classList.add('active');
         }
+        
+        // Always make the channels section visible
+        document.getElementById('channelsSection').classList.add('active');
     }
 
     setupEventListeners() {
@@ -49,13 +51,6 @@ class IPTVApp {
         // Handle window resize
         window.addEventListener('resize', () => {
             this.setupSidebar();
-        });
-
-        // Tab buttons
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                this.switchTab(btn.dataset.tab);
-            });
         });
 
         // Channel search
@@ -213,13 +208,23 @@ class IPTVApp {
         const channelsList = document.getElementById('channelsList');
         channelsList.innerHTML = '';
         this.displayChannelList(channels, channelsList);
+        this.displayFavorites(); // Always update favorites when channels are updated
     }
 
     displayFavorites() {
         const favoritesList = document.getElementById('favoritesList');
         favoritesList.innerHTML = '';
         const favorites = this.parser.getFavorites();
-        this.displayChannelList(favorites, favoritesList);
+        
+        if (favorites.length === 0) {
+            // Show a message when there are no favorites
+            const emptyMessage = document.createElement('div');
+            emptyMessage.className = 'empty-favorites-message';
+            emptyMessage.innerHTML = '<p>No favorite channels yet. Add favorites by clicking the star icon on any channel.</p>';
+            favoritesList.appendChild(emptyMessage);
+        } else {
+            this.displayChannelList(favorites, favoritesList);
+        }
     }
 
     displayChannelList(channels, container) {
@@ -261,6 +266,8 @@ class IPTVApp {
             const favoriteBtn = document.createElement('button');
             favoriteBtn.className = `favorite-btn ${channel.isFavorite ? 'active' : ''}`;
             favoriteBtn.innerHTML = '<i class="fas fa-star"></i>';
+            favoriteBtn.title = channel.isFavorite ? 'Remove from favorites' : 'Add to favorites';
+            favoriteBtn.setAttribute('aria-label', channel.isFavorite ? 'Remove from favorites' : 'Add to favorites');
             favoriteBtn.onclick = (e) => {
                 e.stopPropagation();
                 this.toggleFavorite(channel.url);
@@ -282,9 +289,7 @@ class IPTVApp {
 
     filterChannels(searchTerm) {
         const channels = this.parser.filterChannels(searchTerm);
-        const container = this.currentTab === 'channels' ? 
-            document.getElementById('channelsList') : 
-            document.getElementById('favoritesList');
+        const container = document.getElementById('channelsList');
         container.innerHTML = '';
         this.displayChannelList(channels, container);
     }
@@ -294,30 +299,6 @@ class IPTVApp {
         this.displayChannels(this.parser.channels);
         this.displayFavorites();
         this.updateStats();
-    }
-
-    switchTab(tab) {
-        this.currentTab = tab;
-        
-        // Update tab buttons
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.tab === tab);
-        });
-
-        // Update sections
-        document.getElementById('channelsSection').classList.toggle('active', tab === 'channels');
-        document.getElementById('favoritesSection').classList.toggle('active', tab === 'favorites');
-
-        // Update search placeholder
-        document.getElementById('channelSearch').placeholder = 
-            tab === 'channels' ? 'Search channels...' : 'Search favorites...';
-
-        // Refresh the display
-        if (tab === 'channels') {
-            this.displayChannels(this.parser.channels);
-        } else {
-            this.displayFavorites();
-        }
     }
 
     async loadDefaultChannels() {
@@ -401,20 +382,6 @@ class IPTVApp {
             isSwiping = true;
         }, false);
 
-        channelsList.addEventListener('touchmove', (e) => {
-            if (!isSwiping) return;
-            
-            const channelItem = e.target.closest('.channel-item');
-            if (channelItem) {
-                const touchX = e.changedTouches[0].screenX;
-                const diff = touchX - touchStartX;
-                
-                if (Math.abs(diff) > 10) {
-                    channelItem.style.transform = `translateX(${diff}px)`;
-                }
-            }
-        }, false);
-
         channelsList.addEventListener('touchend', (e) => {
             if (!isSwiping) return;
             
@@ -422,14 +389,8 @@ class IPTVApp {
             const channelItem = e.target.closest('.channel-item');
             
             if (channelItem) {
-                channelItem.style.transform = '';
-                const channelUrl = channelItem.dataset.url;
-                
-                if (Math.abs(touchEndX - touchStartX) > 50) {
-                    if (touchEndX > touchStartX) {
-                        this.toggleFavorite(channelUrl);
-                    }
-                }
+                // No need to reset transform since we're not setting it anymore
+                // No sliding animation is applied
             }
             
             isSwiping = false;
