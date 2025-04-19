@@ -18,25 +18,12 @@
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h2>IPTV Player</h2>
                 <div class="player-stats">
                     <span id="totalChannels">0 Channels</span>
                     <span id="favoritesCount">0 Favorites</span>
                 </div>
             </div>
             
-            <!-- Tabs -->
-            <div class="sidebar-tabs">
-                <button class="tab-btn active" data-tab="channels">
-                    <i class="fas fa-tv"></i>
-                    <span>Channels</span>
-                </button>
-                <button class="tab-btn" data-tab="favorites">
-                    <i class="fas fa-star"></i>
-                    <span>Favorites</span>
-                </button>
-            </div>
-
             <!-- Search Container -->
             <div class="search-container">
                 <input type="text" id="channelSearch" placeholder="Search channels...">
@@ -45,15 +32,11 @@
 
             <!-- Channels List -->
             <div class="channels-section active" id="channelsSection">
+                <div class="hint-message">
+                    <p><i class="fas fa-info-circle"></i> Tap the star icon to add a channel to favorites</p>
+                </div>
                 <div class="channels-list" id="channelsList">
                     <!-- Channels will be populated here -->
-                </div>
-            </div>
-
-            <!-- Favorites List -->
-            <div class="channels-section" id="favoritesSection">
-                <div class="channels-list" id="favoritesList">
-                    <!-- Favorites will be populated here -->
                 </div>
             </div>
         </div>
@@ -62,10 +45,6 @@
         <div class="main-content">
             <!-- Player Controls -->
             <div class="player-controls">
-                <div class="player-info">
-                    <span id="currentChannel">No channel selected</span>
-                    <span id="streamQuality">Auto</span>
-                </div>
                 <div class="control-buttons">
                     <div class="theme-toggle">
                         <button id="themeToggle">
@@ -93,6 +72,14 @@
                         <li>Currently unavailable</li>
                     </ul>
                     <p>Try another channel or check the stream URL.</p>
+                </div>
+            </div>
+
+            <!-- Favorites Section - Added under the player -->
+            <div class="favorites-container">
+                <h3><i class="fas fa-star"></i> Favorite Channels</h3>
+                <div class="channels-list" id="favoritesList">
+                    <!-- Favorites will be populated here -->
                 </div>
             </div>
 
