@@ -232,7 +232,15 @@ class IPTVApp {
         channels.forEach(channel => {
             const channelElement = document.createElement('div');
             channelElement.className = `channel-item ${channel.isFavorite ? 'favorite' : ''}`;
-            channelElement.dataset.url = channel.url;
+            
+            // Store the URL in a non-visible property instead of a data attribute
+            // Create a unique ID for each channel
+            const channelId = 'channel_' + btoa(channel.url).replace(/=/g, '');
+            channelElement.id = channelId;
+            
+            // Store the channel URL in a JavaScript object rather than the DOM
+            if (!window.channelUrls) window.channelUrls = {};
+            window.channelUrls[channelId] = channel.url;
             
             const channelInfo = document.createElement('div');
             channelInfo.className = 'channel-info';
@@ -277,7 +285,7 @@ class IPTVApp {
             channelElement.appendChild(favoriteBtn);
             
             channelElement.onclick = () => {
-                this.player.playChannel(channel.url);
+                this.player.playChannel(window.channelUrls[channelId]);
                 this.updateCurrentChannel(channel.info.title);
             };
             
@@ -456,6 +464,11 @@ class IPTVApp {
             `;
             channelsList.appendChild(errorMessage);
         }
+    }
+
+    // Add this method to handle getting channel URL by ID
+    getChannelUrlById(channelId) {
+        return window.channelUrls ? window.channelUrls[channelId] : null;
     }
 }
 
