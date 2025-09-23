@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPTV Player</title>
+    <title>IPTV Player - Modern Streaming Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
 </head>
 <body>
@@ -45,16 +48,44 @@
         <div class="main-content">
             <!-- Player Controls -->
             <div class="player-controls">
-                <div class="control-buttons">
-                    <div class="theme-toggle">
-                        <button id="themeToggle">
-                            <i class="fas fa-moon"></i>
-                        </button>
+                <div class="player-controls-left">
+                    <div class="current-channel-info">
+                        <h2 id="currentChannelName">Select a Channel</h2>
+                        <p id="currentChannelGroup">Choose from the sidebar</p>
                     </div>
-                    <div class="reset-channels">
-                        <button id="resetChannels" title="Reset to default channels">
-                            <i class="fas fa-sync-alt"></i>
-                        </button>
+                </div>
+                <div class="player-controls-right">
+                    <div class="player-info">
+                        <span id="videoQuality">Auto</span>
+                        <span id="videoStatus">Ready</span>
+                    </div>
+                    <div class="control-buttons">
+                        <div class="volume-control">
+                            <button id="volumeBtn" title="Volume">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="100" class="volume-slider">
+                        </div>
+                        <div class="picture-in-picture">
+                            <button id="pipBtn" title="Picture in Picture">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </button>
+                        </div>
+                        <div class="fullscreen">
+                            <button id="fullscreenBtn" title="Fullscreen">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                        <div class="theme-toggle">
+                            <button id="themeToggle" title="Toggle Theme">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </div>
+                        <div class="reset-channels">
+                            <button id="resetChannels" title="Reset to default channels">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,11 +106,27 @@
                 </div>
             </div>
 
-            <!-- Favorites Section - Added under the player -->
+            <!-- Recent Channels Section -->
+            <div class="recent-channels-container">
+                <h3><i class="fas fa-history"></i> Recent Channels</h3>
+                <div class="channels-list" id="recentChannelsList">
+                    <!-- Recent channels will be populated here -->
+                </div>
+            </div>
+
+            <!-- Favorites Section -->
             <div class="favorites-container">
                 <h3><i class="fas fa-star"></i> Favorite Channels</h3>
                 <div class="channels-list" id="favoritesList">
                     <!-- Favorites will be populated here -->
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <div class="categories-container">
+                <h3><i class="fas fa-th-large"></i> Categories</h3>
+                <div class="categories-list" id="categoriesList">
+                    <!-- Categories will be populated here -->
                 </div>
             </div>
 
