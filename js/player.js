@@ -106,11 +106,18 @@ class VideoPlayer {
 
     setupKeyboardShortcuts() {
         document.addEventListener('keydown', (e) => {
+            // Don't trigger shortcuts when typing in input fields
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return;
+            }
+            
             switch (e.key) {
                 case 'f':
+                case 'F':
                     this.toggleFullscreen();
                     break;
                 case ' ':
+                    e.preventDefault();
                     if (this.video.paused) {
                         this.video.play();
                     } else {
@@ -123,7 +130,31 @@ class VideoPlayer {
                 case 'ArrowLeft':
                     this.video.currentTime -= 10;
                     break;
+                case 'ArrowUp':
+                    this.video.volume = Math.min(1, this.video.volume + 0.1);
+                    break;
+                case 'ArrowDown':
+                    this.video.volume = Math.max(0, this.video.volume - 0.1);
+                    break;
+                case 'm':
+                case 'M':
+                    this.video.muted = !this.video.muted;
+                    break;
+                case 'p':
+                case 'P':
+                    this.togglePictureInPicture();
+                    break;
             }
         });
+    }
+
+    togglePictureInPicture() {
+        if (document.pictureInPictureElement) {
+            document.exitPictureInPicture();
+        } else {
+            this.video.requestPictureInPicture().catch(err => {
+                console.error('Picture-in-Picture error:', err);
+            });
+        }
     }
 } 

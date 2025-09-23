@@ -2,12 +2,16 @@ class IPTVApp {
     constructor() {
         this.parser = new M3UParser();
         this.player = new VideoPlayer();
+        this.recentChannels = JSON.parse(localStorage.getItem('recentChannels') || '[]');
+        this.currentCategory = 'All';
         this.setupEventListeners();
         this.setupTheme();
         this.loadDefaultChannels();
         this.setupSidebar();
         this.setupSwipeHandlers();
         this.updateStats();
+        this.displayRecentChannels();
+        this.displayCategories();
     }
 
     setupSidebar() {
@@ -97,6 +101,25 @@ class IPTVApp {
         // Reset channels button
         document.getElementById('resetChannels').addEventListener('click', () => {
             this.resetChannels();
+        });
+
+        // Volume control
+        document.getElementById('volumeBtn').addEventListener('click', () => {
+            this.toggleMute();
+        });
+
+        document.getElementById('volumeSlider').addEventListener('input', (e) => {
+            this.setVolume(e.target.value);
+        });
+
+        // Picture in Picture
+        document.getElementById('pipBtn').addEventListener('click', () => {
+            this.togglePictureInPicture();
+        });
+
+        // Fullscreen
+        document.getElementById('fullscreenBtn').addEventListener('click', () => {
+            this.toggleFullscreen();
         });
     }
 
@@ -286,7 +309,7 @@ class IPTVApp {
             
             channelElement.onclick = () => {
                 this.player.playChannel(window.channelUrls[channelId]);
-                this.updateCurrentChannel(channel.info.title);
+                this.updateCurrentChannelInfo(channel);
             };
             
             container.appendChild(channelElement);
@@ -312,7 +335,12 @@ class IPTVApp {
     async loadDefaultChannels() {
         // Show loading indicator
         const channelsList = document.getElementById('channelsList');
-        channelsList.innerHTML = '<div class="loading-message">Loading channels...</div>';
+        channelsList.innerHTML = `
+            <div class="loading-message">
+                <div class="loading-spinner"></div>
+                <p>Loading channels...</p>
+            </div>
+        `;
 
         const possiblePaths = [
             'https://raw.githubusercontent.com/waheeb1983/iptv-player/master/Channels/merged_playlist.m3u',
@@ -469,6 +497,228 @@ class IPTVApp {
     // Add this method to handle getting channel URL by ID
     getChannelUrlById(channelId) {
         return window.channelUrls ? window.channelUrls[channelId] : null;
+    }
+
+    // Volume control methods
+    toggleMute() {
+        const video = document.getElementById('videoPlayer');
+        const volumeBtn = document.getElementById('volumeBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        
+        if (video.muted) {
+            video.muted = false;
+            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            volumeSlider.value = video.volume * 100;
+        } else {
+            video.muted = true;
+            volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        }
+    }
+
+    setVolume(value) {
+        const video = document.getElementById('videoPlayer');
+        const volumeBtn = document.getElementById('volumeBtn');
+        
+        video.volume = value / 100;
+        video.muted = false;
+        
+        if (value == 0) {
+            volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        } else if (value < 50) {
+            volumeBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
+        } else {
+            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        }
+    }
+
+    // Picture in Picture
+    async togglePictureInPicture() {
+        const video = document.getElementById('videoPlayer');
+        const pipBtn = document.getElementById('pipBtn');
+        
+        try {
+            if (document.pictureInPictureElement) {
+                await document.exitPictureInPicture();
+                pipBtn.innerHTML = '<i class="fas fa-expand-arrows-alt"></i>';
+            } else {
+                await video.requestPictureInPicture();
+                pipBtn.innerHTML = '<i class="fas fa-compress-arrows-alt"></i>';
+            }
+        } catch (error) {
+            console.error('Picture-in-Picture error:', error);
+        }
+    }
+
+    // Fullscreen
+    toggleFullscreen() {
+        const video = document.getElementById('videoPlayer');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        
+        if (!document.fullscreenElement) {
+            video.requestFullscreen().then(() => {
+                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+            }).catch(err => {
+                console.error(`Error attempting to enable fullscreen: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen().then(() => {
+                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+            });
+        }
+    }
+
+    // Recent channels functionality
+    addToRecentChannels(channel) {
+        // Remove if already exists
+        this.recentChannels = this.recentChannels.filter(c => c.url !== channel.url);
+        
+        // Add to beginning
+        this.recentChannels.unshift({
+            ...channel,
+            timestamp: Date.now()
+        });
+        
+        // Keep only last 10
+        this.recentChannels = this.recentChannels.slice(0, 10);
+        
+        // Save to localStorage
+        localStorage.setItem('recentChannels', JSON.stringify(this.recentChannels));
+        
+        // Update display
+        this.displayRecentChannels();
+    }
+
+    displayRecentChannels() {
+        const recentChannelsList = document.getElementById('recentChannelsList');
+        recentChannelsList.innerHTML = '';
+        
+        if (this.recentChannels.length === 0) {
+            const emptyMessage = document.createElement('div');
+            emptyMessage.className = 'empty-favorites-message';
+            emptyMessage.innerHTML = '<p>No recent channels. Start watching to see your recent channels here.</p>';
+            recentChannelsList.appendChild(emptyMessage);
+        } else {
+            this.displayChannelList(this.recentChannels, recentChannelsList);
+        }
+    }
+
+    // Categories functionality
+    displayCategories() {
+        const categoriesList = document.getElementById('categoriesList');
+        const categories = this.getCategories();
+        
+        categoriesList.innerHTML = '';
+        
+        // Add "All" category
+        const allCategory = document.createElement('div');
+        allCategory.className = `category-item ${this.currentCategory === 'All' ? 'active' : ''}`;
+        allCategory.textContent = 'All';
+        allCategory.onclick = () => this.filterByCategory('All');
+        categoriesList.appendChild(allCategory);
+        
+        // Add other categories
+        categories.forEach(category => {
+            const categoryElement = document.createElement('div');
+            categoryElement.className = `category-item ${this.currentCategory === category ? 'active' : ''}`;
+            categoryElement.textContent = category;
+            categoryElement.onclick = () => this.filterByCategory(category);
+            categoriesList.appendChild(categoryElement);
+        });
+    }
+
+    getCategories() {
+        const categories = new Set();
+        this.parser.channels.forEach(channel => {
+            if (channel.info.group) {
+                categories.add(channel.info.group);
+            }
+        });
+        return Array.from(categories).sort();
+    }
+
+    filterByCategory(category) {
+        this.currentCategory = category;
+        this.displayCategories();
+        
+        if (category === 'All') {
+            this.displayChannels(this.parser.channels);
+        } else {
+            const filteredChannels = this.parser.channels.filter(channel => 
+                channel.info.group === category
+            );
+            this.displayChannels(filteredChannels);
+        }
+    }
+
+    // Update current channel info
+    updateCurrentChannelInfo(channel) {
+        document.getElementById('currentChannelName').textContent = channel.info.title;
+        document.getElementById('currentChannelGroup').textContent = channel.info.group || 'No category';
+        this.addToRecentChannels(channel);
+        this.showNotification(`Now playing: ${channel.info.title}`, 'success');
+    }
+
+    // Notification system
+    showNotification(message, type = 'info', duration = 3000) {
+        // Remove existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => notification.remove());
+
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-${this.getNotificationIcon(type)}"></i>
+                <span>${message}</span>
+            </div>
+        `;
+
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 10000;
+            animation: slideInUp 0.3s ease-out;
+            max-width: 300px;
+        `;
+
+        // Add color based on type
+        const colors = {
+            success: 'var(--success-color)',
+            error: 'var(--error-color)',
+            warning: 'var(--warning-color)',
+            info: 'var(--primary-color)'
+        };
+        
+        notification.style.borderLeftColor = colors[type] || colors.info;
+
+        document.body.appendChild(notification);
+
+        // Auto remove after duration
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.style.animation = 'slideInUp 0.3s ease-out reverse';
+                setTimeout(() => notification.remove(), 300);
+            }
+        }, duration);
+    }
+
+    getNotificationIcon(type) {
+        const icons = {
+            success: 'check-circle',
+            error: 'exclamation-circle',
+            warning: 'exclamation-triangle',
+            info: 'info-circle'
+        };
+        return icons[type] || icons.info;
     }
 }
 
