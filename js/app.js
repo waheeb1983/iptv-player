@@ -2,7 +2,7 @@ class IPTVApp {
     constructor() {
         this.parser = new M3UParser();
         this.player = new VideoPlayer();
-        this.recentChannels = JSON.parse(localStorage.getItem('recentChannels') || '[]');
+        localStorage.removeItem('recentChannels');
         this.currentCategory = 'All';
         this.setupEventListeners();
         this.setupTheme();
@@ -10,7 +10,6 @@ class IPTVApp {
         this.setupSidebar();
         this.setupSwipeHandlers();
         this.updateStats();
-        this.displayRecentChannels();
         this.displayCategories();
     }
 
@@ -64,11 +63,20 @@ class IPTVApp {
 
         // M3U URL loader
         document.getElementById('loadUrl').addEventListener('click', () => {
-            const url = document.getElementById('m3uUrl').value;
+            const url = document.getElementById('m3uUrl').value.trim();
             if (url.startsWith('file://')) {
                 alert('Please use the "Load File" button for local files');
                 return;
             }
+
+            if (this.isDirectHlsStreamUrl(url)) {
+                this.player.playChannel(url);
+                document.getElementById('currentChannelName').textContent = 'Direct Stream';
+                document.getElementById('currentChannelGroup').textContent = 'Xtream HLS';
+                this.showNotification('Playing direct stream', 'success');
+                return;
+            }
+
             this.loadM3UFromUrl(url);
         });
 
@@ -87,15 +95,6 @@ class IPTVApp {
         // Theme toggle
         document.getElementById('themeToggle').addEventListener('click', () => {
             this.toggleTheme();
-        });
-
-        // Add new event listeners
-        document.getElementById('videoPlayer').addEventListener('play', () => {
-            this.updateCurrentChannel();
-        });
-
-        document.getElementById('videoPlayer').addEventListener('error', () => {
-            this.updateCurrentChannel('Error playing channel');
         });
 
         // Reset channels button
@@ -127,6 +126,16 @@ class IPTVApp {
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         this.updateThemeIcon(savedTheme);
+    }
+
+    isDirectHlsStreamUrl(url) {
+        try {
+            const parsedUrl = new URL(url);
+            return (parsedUrl.protocol === 'http:' || parsedUrl.protocol === 'https:') &&
+                parsedUrl.pathname.toLowerCase().endsWith('.m3u8');
+        } catch {
+            return false;
+        }
     }
 
     toggleTheme() {
@@ -333,78 +342,38 @@ class IPTVApp {
     }
 
     async loadDefaultChannels() {
-        // Show loading indicator
-        const channelsList = document.getElementById('channelsList');
-        channelsList.innerHTML = `
-            <div class="loading-message">
-                <div class="loading-spinner"></div>
-                <p>Loading channels...</p>
-            </div>
-        `;
-
-        const possiblePaths = [
-            'https://raw.githubusercontent.com/waheeb1983/iptv-player/master/Channels/merged_playlist.m3u',
-            'Channels/merged_playlist.m3u',
-            './Channels/merged_playlist.m3u',
-            '/Channels/merged_playlist.m3u',
-            'channels/merged_playlist.m3u',
-            './channels/merged_playlist.m3u',
-            '/channels/merged_playlist.m3u',
-            'merged_playlist.m3u'
-        ];
-
-        let lastError = null;
-        let lastResponse = null;
-        
-        for (const path of possiblePaths) {
-            try {
-                console.log(`Trying to load playlist from: ${path}`);
-                const response = await fetch(path);
-                lastResponse = response;
-                
-                if (response.ok) {
-                    const content = await response.text();
-                    if (content.includes('#EXTM3U')) {
-                        this.processM3UContent(content);
-                        return;
-                    } else {
-                        throw new Error('Invalid M3U format');
-                    }
-                } else {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-            } catch (error) {
-                console.error(`Failed to load from ${path}:`, error);
-                lastError = error;
+        try {
+            const response = await fetch('Channels/merged_playlist.m3u', { cache: 'no-store' });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        }
 
-        // If we get here, all attempts failed
-        console.error('All attempts to load default playlist failed:', lastError);
-        
-        // Show error message to user with more specific details
-        const errorMessage = document.createElement('div');
-        errorMessage.className = 'error-message';
-        
-        let errorDetails = 'Could not load default playlist from any location';
-        if (lastError) {
-            errorDetails = lastError.message;
-        } else if (lastResponse) {
-            errorDetails = `HTTP error! status: ${lastResponse.status}`;
-        }
+            const content = await response.text();
+            if (!content.includes('#EXTM3U')) {
+                throw new Error('Invalid M3U playlist format');
+            }
 
-        errorMessage.innerHTML = `
-            <p>Failed to load default channels. Please try:</p>
-            <ul>
-                <li>Loading a playlist manually using the URL or file upload</li>
-                <li>Checking your internet connection</li>
-                <li>Refreshing the page</li>
-            </ul>
-            <p>Error details: ${errorDetails}</p>
-            <button class="retry-button" onclick="app.loadDefaultChannels()">Retry Loading</button>
-        `;
-        channelsList.innerHTML = '';
-        channelsList.appendChild(errorMessage);
+            this.processM3UContent(content);
+            this.displayCategories();
+        } catch (error) {
+            console.error('Could not reload the default playlist:', error);
+            const savedChannels = this.parser.loadSavedChannels();
+            if (savedChannels.length > 0) {
+                this.displayChannels(savedChannels);
+                this.displayCategories();
+            } else {
+                const content = `#EXTM3U
+#EXTINF:-1 tvg-id="AlGhadPlus2222.eg",Al Ghad Plus
+http://annkel.com/live/8743987625/8871252355/32298.m3u8`;
+                this.processM3UContent(content);
+                this.displayCategories();
+            }
+            this.showNotification(
+                'Could not reload the playlist file. Use a local web server or Load File to include your latest edits.',
+                'warning',
+                7000
+            );
+        }
     }
 
     setupSwipeHandlers() {
@@ -439,18 +408,6 @@ class IPTVApp {
         
         document.getElementById('totalChannels').textContent = `${totalChannels} Channels`;
         document.getElementById('favoritesCount').textContent = `${favoritesCount} Favorites`;
-    }
-
-    updateCurrentChannel(name = '') {
-        const currentChannelElement = document.getElementById('currentChannel');
-        if (name) {
-            currentChannelElement.textContent = name;
-        } else {
-            const currentChannel = this.parser.channels.find(channel => 
-                channel.url === this.player.video.src
-            );
-            currentChannelElement.textContent = currentChannel ? currentChannel.info.title : 'No channel selected';
-        }
     }
 
     async resetChannels() {
@@ -567,41 +524,6 @@ class IPTVApp {
         }
     }
 
-    // Recent channels functionality
-    addToRecentChannels(channel) {
-        // Remove if already exists
-        this.recentChannels = this.recentChannels.filter(c => c.url !== channel.url);
-        
-        // Add to beginning
-        this.recentChannels.unshift({
-            ...channel,
-            timestamp: Date.now()
-        });
-        
-        // Keep only last 10
-        this.recentChannels = this.recentChannels.slice(0, 10);
-        
-        // Save to localStorage
-        localStorage.setItem('recentChannels', JSON.stringify(this.recentChannels));
-        
-        // Update display
-        this.displayRecentChannels();
-    }
-
-    displayRecentChannels() {
-        const recentChannelsList = document.getElementById('recentChannelsList');
-        recentChannelsList.innerHTML = '';
-        
-        if (this.recentChannels.length === 0) {
-            const emptyMessage = document.createElement('div');
-            emptyMessage.className = 'empty-favorites-message';
-            emptyMessage.innerHTML = '<p>No recent channels. Start watching to see your recent channels here.</p>';
-            recentChannelsList.appendChild(emptyMessage);
-        } else {
-            this.displayChannelList(this.recentChannels, recentChannelsList);
-        }
-    }
-
     // Categories functionality
     displayCategories() {
         const categoriesList = document.getElementById('categoriesList');
@@ -654,7 +576,6 @@ class IPTVApp {
     updateCurrentChannelInfo(channel) {
         document.getElementById('currentChannelName').textContent = channel.info.title;
         document.getElementById('currentChannelGroup').textContent = channel.info.group || 'No category';
-        this.addToRecentChannels(channel);
         this.showNotification(`Now playing: ${channel.info.title}`, 'success');
     }
 

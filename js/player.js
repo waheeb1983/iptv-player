@@ -28,8 +28,9 @@ class VideoPlayer {
             this.hls = null;
         }
 
-        // Check if URL is an HLS stream (.m3u8)
-        if (url.endsWith('.m3u8') || url.includes('/hls/')) {
+        // Check the path separately so HLS URLs with query strings are recognized.
+        const streamPath = url.split(/[?#]/, 1)[0].toLowerCase();
+        if (streamPath.endsWith('.m3u8') || streamPath.includes('/hls/')) {
             this.playHLS(url);
         } else {
             this.playDirect(url);
