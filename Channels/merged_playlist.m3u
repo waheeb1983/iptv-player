@@ -1,7 +1,9 @@
 # Playlist: eg.m3u
 #EXTM3U
 #EXTINF:-1 tvg-id="AghapyTV.eg",Aghapy TV (1080p) [Not 24/7]
-https://5b622f07944df.streamlock.net/aghapy.tv/aghapy.smil/playlist.m3u8
+http://annkel.com/live/8743987625/8871252355/32296.m3u8
+#EXTINF:-1 tvg-id="AghapyTV2",Aghapy TV (1080p) [Not 24/7]
+https://annkel.com/live/8743987625/8871252355/32296.m3u8
 #EXTINF:-1 tvg-id="AlGhadPlus.eg",Al Ghad Plus
 https://playlist.fasttvcdn.com/pl/ykvm3f2fhokwxqsurp9xcg/alghad-plus/playlist.m3u8
 #EXTINF:-1 tvg-id="AlGhadTV.eg",Al Ghad TV (1080p)
