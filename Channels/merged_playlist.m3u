@@ -1,5 +1,8 @@
-# Playlist: eg.m3u
 #EXTM3U
+#EXTINF:-1 tvg-id="Bein Sport 3 SD",Bein Sport 3 SD
+http://annkel.com/live/8743987625/8871252355/32298.m3u8
+#EXTINF:-1 tvg-id="Bein Sport test SD",Bein Sport 3 SD
+http://annkel.com/live/8743987625/8871252355/32296.m3u8
 #EXTINF:-1 tvg-id="dadadadadad.eg",Aghapy TV (1080p) [Not 24/7]
 http://annkel.com/live/8743987625/8871252355/79423.m3u8
 #EXTINF:-1 tvg-id="dadadadadad.eg",Aghapy TV (1080p) [Not 24/7]
