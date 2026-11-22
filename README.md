@@ -21,7 +21,6 @@ A cutting-edge web-based IPTV player with a stunning glassmorphism design and ad
 ### 📺 Channel Management
 - **Smart Search** - Real-time channel filtering and search
 - **Categories** - Organize channels by groups and categories
-- **Recent Channels** - Quick access to recently watched content
 - **Favorites System** - Star channels for easy access
 - **Channel Statistics** - Track total channels and favorites count
 
@@ -47,13 +46,18 @@ git clone https://github.com/yourusername/iptv-player.git
 cd iptv-player
 ```
 
-2. Open `index.html` in your web browser.
+2. From the project folder, start a local web server:
+```bash
+python -m http.server 8000
+```
+3. Open `http://localhost:8000` in your browser. The app reloads the default playlist from `Channels/merged_playlist.m3u`; serving it over HTTP lets playlist edits appear after refresh.
 
 ## 🚀 Usage
 
 ### Getting Started
 1. **Load Playlist** - Choose from:
    - Enter M3U URL in the input field
+   - Enter a direct Xtream `.m3u8` stream URL to play it immediately
    - Upload local M3U file using the file button
    - Use the default playlist (auto-loaded)
 

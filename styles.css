@@ -969,47 +969,6 @@ video:hover {
     font-size: 1.5rem;
 }
 
-/* Recent Channels Container */
-.recent-channels-container {
-    margin-bottom: 2rem;
-    background: var(--gradient-surface);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
-    padding: 1.5rem;
-    border: 1px solid var(--glass-border);
-    border-left: 4px solid var(--primary-color);
-    position: relative;
-    overflow: hidden;
-}
-
-.recent-channels-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.02) 100%);
-    z-index: -1;
-}
-
-.recent-channels-container h3 {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.recent-channels-container h3 i {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-}
-
 /* Categories Container */
 .categories-container {
     margin-bottom: 2rem;
